@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ch.fhnw.imvs</groupId>
+    <artifactId>hwgste-reader-parent</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>API and Reader for HWg-STE devices</name>
+    <description>API and Reader for HWg-STE devices</description>
+    <url>https://github.com/fhnw-imvs/fhnw-hwgste-reader</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/fhnw-imvs/fhnw-hwgste-reader</url>
+    </scm>
+
+    <modules>
+        <module>hwgste-api</module>
+        <module>hwgste-reader</module>
+    </modules>
+
+    <properties>
+        <slf4j.version>1.7.29</slf4j.version>
+        <log4j.version>1.2.17</log4j.version>
+        <junit4.version>4.12</junit4.version>
+        <mockito.version>3.2.0</mockito.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub fhnw-hwgste-reader Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/fhnw-imvs/fhnw-hwgste-reader</url>
+        </repository>
+    </distributionManagement>
+
+</project>

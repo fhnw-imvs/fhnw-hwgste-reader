@@ -1,0 +1,73 @@
+<xs:schema targetNamespace="http://www.hw-group.com/XMLSchema/ste/values.xsd"
+           xmlns:val="http://www.hw-group.com/XMLSchema/ste/values.xsd"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Root" type="val:RootType"/>
+    <xs:complexType name="RootType">
+        <xs:sequence>
+            <xs:element name="Agent">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Version" type="xs:string" />
+                        <xs:element name="XmlVer" type="xs:string" />
+                        <xs:element name="DeviceName" type="xs:string" />
+                        <xs:element name="Model" type="xs:unsignedByte" />
+                        <xs:element name="vendor_id" type="xs:string" />
+                        <xs:element name="MAC" type="xs:string" />
+                        <xs:element name="IP" type="xs:string" />
+                        <xs:element name="MASK" type="xs:string" />
+                        <xs:element name="sys_name" type="xs:string" />
+                        <xs:element name="sys_location" type="xs:string" />
+                        <xs:element name="sys_contact" type="xs:string" />
+                        <xs:element name="UpTime" type="xs:unsignedInt" minOccurs="0"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="SenSet">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" name="Entry">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="ID" type="xs:int" />
+                                    <xs:element name="Name" type="xs:string" />
+                                    <xs:element name="Units" type="xs:string" />
+                                    <xs:element name="Value" type="xs:decimal" />
+                                    <xs:element name="Min" type="xs:decimal" />
+                                    <xs:element name="Max" type="xs:decimal" />
+                                    <xs:element name="Hyst" type="xs:decimal" />
+                                    <xs:element name="EmailSMS" type="xs:unsignedByte" />
+                                    <xs:element name="State" type="xs:unsignedByte" />
+                                    <xs:element name="status" minOccurs="0">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="state" type="xs:unsignedByte" />
+                                                <xs:element name="alarm" type="xs:unsignedByte" />
+                                            </xs:sequence>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="Exp" type="xs:short" minOccurs="0"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="BinaryInSet" minOccurs="0">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" name="Entry">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="ID" type="xs:int" />
+                                    <xs:element name="Name" type="xs:string" />
+                                    <xs:element name="Value" type="xs:unsignedByte" />
+                                    <xs:element name="AlarmState" type="xs:unsignedByte" />
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<val:Root xmlns:val="http://www.hw-group.com/XMLSchema/ste/values.xsd">
+<Agent>
+    <Version>2.0.7</Version>
+    <XmlVer>1.01</XmlVer>
+    <DeviceName>HWg-STE</DeviceName>
+    <Model>33</Model>
+    <vendor_id>0</vendor_id>
+    <MAC>00:0A:60:04:10:81</MAC>
+    <IP>192.168.200.138</IP>
+    <MASK>255.255.255.0</MASK>
+    <sys_name>SystemName</sys_name>
+    <sys_location>SystemLocation</sys_location>
+    <sys_contact>HWg-STE:For more information try http://www.hw-group.com</sys_contact>
+</Agent>
+<SenSet>
+    <Entry>
+        <ID>215</ID>
+        <Name>Sensor 215</Name>
+        <Units>C</Units>
+        <Value>25.0</Value>
+        <Min>10.0</Min>
+        <Max>60.0</Max>
+        <Hyst>0.0</Hyst>
+        <EmailSMS>0</EmailSMS>
+        <State>1</State>
+    </Entry>
+    <Entry>
+        <ID>216</ID>
+        <Name>Sensor 216</Name>
+        <Units>%RH</Units>
+        <Value>46.7</Value>
+        <Min>10.0</Min>
+        <Max>60.0</Max>
+        <Hyst>0.0</Hyst>
+        <EmailSMS>0</EmailSMS>
+        <State>0</State>
+    </Entry>
+</SenSet>
+</val:Root>
