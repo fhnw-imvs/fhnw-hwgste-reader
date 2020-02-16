@@ -102,7 +102,9 @@ class Callback implements HwgSteMeasurementCallback {
 ```
 
 ## Remarks
-
 The project has been tested with the following sensors:
 * [Temp-1Wire IP67 3m](https://www.hw-group.com/sensor/temp-1wire-ip67-1m-3m-10m)
 * [Humid-1Wire 3m](https://www.hw-group.com/sensor/humid-1wire-1m-3m-10m)
+
+## License
+This project is licensed under the Apache 2.0 license, see [LICENSE.md](LICENSE.md).
