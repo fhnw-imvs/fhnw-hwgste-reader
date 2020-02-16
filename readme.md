@@ -107,4 +107,4 @@ The project has been tested with the following sensors:
 * [Humid-1Wire 3m](https://www.hw-group.com/sensor/humid-1wire-1m-3m-10m)
 
 ## License
-This project is licensed under the Apache 2.0 license, see [LICENSE.md](LICENSE.md).
+This project is licensed under the Apache 2.0 license, see [LICENSE](LICENSE).
