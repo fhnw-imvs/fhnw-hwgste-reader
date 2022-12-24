@@ -17,7 +17,7 @@ package ch.fhnw.imvs.hwgstereader.api;
 
 import ch.fhnw.imvs.hwgstereader.api.schemas.ObjectFactory;
 import ch.fhnw.imvs.hwgstereader.api.schemas.SensorRootType;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,11 +28,11 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test for {@link Mapper}.
@@ -40,12 +40,12 @@ import static org.junit.Assert.assertTrue;
  * @author mluppi
  */
 @SuppressWarnings("squid:S3655")
-public class MapperTest {
+class MapperTest {
 
     private static final String TEST_XML_RESOURCE = "test-sensor-result.xml";
 
     @Test
-    public void testWithXmlFile() throws FileNotFoundException {
+    void testWithXmlFile() throws FileNotFoundException {
         final URL textXmlResource = getClass().getClassLoader().getResource(TEST_XML_RESOURCE);
         final File xmlFile = new File(Objects.requireNonNull(textXmlResource).getFile());
         assertNotNull(xmlFile);
@@ -79,13 +79,13 @@ public class MapperTest {
     }
 
     @Test
-    public void testSensorRootTypeNull() {
+    void testSensorRootTypeNull() {
         final Optional<List<HwgSteMeasurement>> measurements = Mapper.mapMeasurements(null);
         assertFalse(measurements.isPresent());
     }
 
     @Test
-    public void testEntryNull() {
+    void testEntryNull() {
         final ObjectFactory factory = new ObjectFactory();
 
         final SensorRootType.SenSet senSet = factory.createSensorRootTypeSenSet();
@@ -104,7 +104,7 @@ public class MapperTest {
     }
 
     @Test
-    public void testInvalidType() {
+    void testInvalidType() {
         final ObjectFactory factory = new ObjectFactory();
 
         final SensorRootType.SenSet.Entry entry = factory.createSensorRootTypeSenSetEntry();

@@ -15,24 +15,24 @@ limitations under the License.
 */
 package ch.fhnw.imvs.hwgstereader.api;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
  * Test for {@link HwgSteReading}.
  *
  * @author mluppi
  */
-public class HwgSteReadingTest {
+class HwgSteReadingTest {
 
     @Test
-    public void testConstructors() {
+    void testConstructors() {
         final HwgSteNode node = new HwgSteNode("test-id", "0.0.0.0");
 
         final HwgSteMetaInformation metaInformation = new HwgSteMetaInformation("TestDevice", "192.268.100.1",

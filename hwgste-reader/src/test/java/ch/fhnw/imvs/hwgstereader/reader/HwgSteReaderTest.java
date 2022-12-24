@@ -15,33 +15,34 @@ limitations under the License.
 */
 package ch.fhnw.imvs.hwgstereader.reader;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
-
+import ch.fhnw.imvs.hwgstereader.api.HwgSteFetchStatus;
 import ch.fhnw.imvs.hwgstereader.api.HwgSteFetcher;
 import ch.fhnw.imvs.hwgstereader.api.HwgSteMeasurement;
 import ch.fhnw.imvs.hwgstereader.api.HwgSteMetaInformation;
 import ch.fhnw.imvs.hwgstereader.api.HwgSteNode;
-import ch.fhnw.imvs.hwgstereader.api.HwgSteFetchStatus;
 import ch.fhnw.imvs.hwgstereader.api.HwgSteReading;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.BeforeClass;
-import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 /**
  * Test for {@link HwgSteReader}.
  *
  * @author mluppi
  */
-public class HwgSteReaderTest {
+class HwgSteReaderTest {
 
     private static List<HwgSteReading> readingList;
     private static HwgSteReader reader;
 
-    @BeforeClass
+    @BeforeAll
     public static void setUp() {
         final List<HwgSteNode> nodeList = new ArrayList<>();
         final HwgSteNode node1 = new HwgSteNode("node-1", "127.0.0.1");
@@ -71,7 +72,7 @@ public class HwgSteReaderTest {
     }
 
     @Test
-    public void testRead() {
+    void testRead() {
         final List<HwgSteReading> readingList = reader.read();
         assertNotNull(HwgSteReaderTest.readingList);
         assertEquals(2, HwgSteReaderTest.readingList.size());
@@ -80,16 +81,17 @@ public class HwgSteReaderTest {
     }
 
     @Test
-    public void testConnectTimeout() {
+    void testConnectTimeout() {
         final HwgSteFetcher fetcher = new HwgSteFetcher();
         fetcher.setConnectTimeout(123);
         assertEquals(123, fetcher.getConnectTimeout());
     }
 
     @Test
-    public void testReadTimeout() {
+    void testReadTimeout() {
         final HwgSteFetcher fetcher = new HwgSteFetcher();
         fetcher.setReadTimeout(456);
         assertEquals(456, fetcher.getReadTimeout());
     }
+
 }

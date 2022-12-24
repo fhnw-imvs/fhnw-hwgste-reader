@@ -15,20 +15,21 @@ limitations under the License.
 */
 package ch.fhnw.imvs.hwgstereader.api;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test for {@link HwgSteMeasurementType}.
  *
  * @author mluppi
  */
-public class HwgSteMeasurementTypeTest {
+class HwgSteMeasurementTypeTest {
 
     @Test
-    public void testGetUnit() {
+    void testGetUnit() {
         final HwgSteMeasurementType type = HwgSteMeasurementType.TEMPERATURE;
         assertEquals("°C", type.getUnit());
     }
+
 }

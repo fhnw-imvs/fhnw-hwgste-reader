@@ -15,7 +15,7 @@ limitations under the License.
 */
 package ch.fhnw.imvs.hwgstereader.api;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,8 +26,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.when;
@@ -37,12 +37,12 @@ import static org.mockito.Mockito.when;
  *
  * @author mluppi
  */
-public class HwgSteFetcherTest {
+class HwgSteFetcherTest {
 
     private static final String TEST_XML_RESOURCE = "test-sensor-result.xml";
 
     @Test
-    public void testFetch() throws IOException {
+    void testFetch() throws IOException {
         final URL textXmlResource = getClass().getClassLoader().getResource(TEST_XML_RESOURCE);
         final File xmlFile = new File(Objects.requireNonNull(textXmlResource).getFile());
         assertNotNull(xmlFile);
@@ -76,16 +76,17 @@ public class HwgSteFetcherTest {
     }
 
     @Test
-    public void testConnectTimeout() {
+    void testConnectTimeout() {
         final HwgSteFetcher fetcher = new HwgSteFetcher();
         fetcher.setConnectTimeout(123);
         assertEquals(123, fetcher.getConnectTimeout());
     }
 
     @Test
-    public void testReadTimeout() {
+    void testReadTimeout() {
         final HwgSteFetcher fetcher = new HwgSteFetcher();
         fetcher.setReadTimeout(456);
         assertEquals(456, fetcher.getReadTimeout());
     }
+
 }

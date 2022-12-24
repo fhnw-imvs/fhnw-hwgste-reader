@@ -18,8 +18,8 @@ package ch.fhnw.imvs.hwgstereader.api;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBElement;
 import java.io.InputStream;
 
 /**

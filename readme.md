@@ -23,7 +23,7 @@ _More information can be found in the documentation for
 <dependency>
   <groupId>ch.fhnw.imvs</groupId>
   <artifactId>hwgste-api</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 
@@ -32,7 +32,7 @@ _More information can be found in the documentation for
 <dependency>
   <groupId>ch.fhnw.imvs</groupId>
   <artifactId>hwgste-reader</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 

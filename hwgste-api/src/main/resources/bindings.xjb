@@ -13,10 +13,10 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+<jaxb:bindings xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-               xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
-               jaxb:version="2.1">
+               xsi:schemaLocation="https://jakarta.ee/xml/ns/jaxb https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd"
+               jaxb:version="3.0">
     <jaxb:bindings schemaLocation="../xsd/sensor-values.xsd">
         <jaxb:schemaBindings>
             <jaxb:nameXmlTransform>

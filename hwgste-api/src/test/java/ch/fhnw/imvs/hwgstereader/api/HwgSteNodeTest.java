@@ -15,29 +15,30 @@ limitations under the License.
 */
 package ch.fhnw.imvs.hwgstereader.api;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test for {@link HwgSteNode}.
  *
  * @author mluppi
  */
-public class HwgSteNodeTest {
+class HwgSteNodeTest {
 
     public static final String TEST_NAME = "test-id";
     public static final String TEST_HOSTNAME = "0.0.0.0";
 
     @Test
-    public void testGetName() {
+    void testGetName() {
         final HwgSteNode node = new HwgSteNode(TEST_NAME, TEST_HOSTNAME);
         assertEquals(TEST_NAME, node.getName());
     }
 
     @Test
-    public void testGetHostname() {
+    void testGetHostname() {
         final HwgSteNode node = new HwgSteNode(TEST_NAME, TEST_HOSTNAME);
         assertEquals(TEST_HOSTNAME, node.getHostname());
     }
+
 }

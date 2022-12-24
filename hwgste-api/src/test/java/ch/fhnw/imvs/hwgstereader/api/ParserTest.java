@@ -17,7 +17,7 @@ package ch.fhnw.imvs.hwgstereader.api;
 
 import ch.fhnw.imvs.hwgstereader.api.schemas.ObjectFactory;
 import ch.fhnw.imvs.hwgstereader.api.schemas.SensorRootType;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,21 +26,21 @@ import java.net.URL;
 import java.util.List;
 import java.util.Objects;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
 /**
  * Test for {@link Parser}.
  *
  * @author mluppi
  */
-public class ParserTest {
+class ParserTest {
 
     private static final String TEST_XML_RESOURCE = "test-sensor-result.xml";
 
     @Test
-    public void testParseXml() throws FileNotFoundException {
+    void testParseXml() throws FileNotFoundException {
         final URL textXmlResource = getClass().getClassLoader().getResource(TEST_XML_RESOURCE);
         final File xmlFile = new File(Objects.requireNonNull(textXmlResource).getFile());
         assertNotNull(xmlFile);
@@ -79,8 +79,9 @@ public class ParserTest {
     }
 
     @Test
-    public void testException() {
+    void testException() {
         final SensorRootType root = Parser.parseXml(null, ObjectFactory.class);
         assertNull(root);
     }
+
 }

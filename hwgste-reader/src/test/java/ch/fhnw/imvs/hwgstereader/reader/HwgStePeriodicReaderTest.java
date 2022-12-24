@@ -19,8 +19,8 @@ import ch.fhnw.imvs.hwgstereader.api.HwgSteFetchStatus;
 import ch.fhnw.imvs.hwgstereader.api.HwgSteFetcher;
 import ch.fhnw.imvs.hwgstereader.api.HwgSteNode;
 import ch.fhnw.imvs.hwgstereader.api.HwgSteReading;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.concurrent.atomic.LongAdder;
 
 import static org.awaitility.Awaitility.await;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -37,14 +37,14 @@ import static org.mockito.Mockito.when;
  *
  * @author mluppi
  */
-public class HwgStePeriodicReaderTest {
+class HwgStePeriodicReaderTest {
 
     private static final int POLL_DURATION = 1; // seconds
 
     private HwgStePeriodicReader reader;
-    private LongAdder adder = new LongAdder();
+    private final LongAdder adder = new LongAdder();
 
-    @Before
+    @BeforeEach
     public void setUp() {
         final List<HwgSteNode> nodeList = new ArrayList<>();
         final HwgSteNode node1 = new HwgSteNode("node-1", "127.0.0.1");
@@ -52,19 +52,19 @@ public class HwgStePeriodicReaderTest {
         final HwgSteNode node2 = new HwgSteNode("node-2", "127.0.0.2");
         nodeList.add(node2);
 
-        final List<HwgSteReading>readingList = new ArrayList<>();
+        final List<HwgSteReading> readingList = new ArrayList<>();
         readingList.add(new HwgSteReading(node1, HwgSteFetchStatus.SUCCESS, null, null));
         readingList.add(new HwgSteReading(node2, HwgSteFetchStatus.SUCCESS, null, null));
 
         final HwgSteFetcher fetcher = mock(HwgSteFetcher.class);
         when(fetcher.fetch(nodeList)).thenReturn(readingList);
 
-        reader = new HwgStePeriodicReader(fetcher,  r -> adder.increment(), POLL_DURATION);
+        reader = new HwgStePeriodicReader(fetcher, r -> adder.increment(), POLL_DURATION);
         reader.attachNodes(nodeList);
     }
 
     @Test
-    public void testStart() {
+    void testStart() {
         final int cutoffCount = 1;
         reader.start();
         await().until(() -> adder.intValue() == cutoffCount);
@@ -72,7 +72,7 @@ public class HwgStePeriodicReaderTest {
     }
 
     @Test
-    public void testStop() {
+    void testStop() {
         final int cutoffCount = 3;
         reader.start();
         await().until(() -> adder.intValue() == cutoffCount);
@@ -80,4 +80,5 @@ public class HwgStePeriodicReaderTest {
         await().atLeast(Duration.ofSeconds(2 * POLL_DURATION));
         assertEquals(cutoffCount, adder.intValue());
     }
+
 }
